@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Webpack/Babel-demo</title>
+    </head>
+
+    <body>
+        <!--
+    This div is added to remove the flicker that comes from bootstrap being loaded
+    first in index.js
+    REMEMBER to set display to "block" in index.js, otherwise you will not see anything
+  -->
+        <div id="all-content" style="display: none">
+            <ul id="menu" class="header">
+                <li><a href="" id="about">About</a></li>
+                <li><a href="" id="addPerson">Add Person</a></li>
+                <li><a href="" id="personInfo">Person Info</a></li>
+                <li><a href="" id="personList">Person List</a></li>
+            </ul>
+
+            <div class="content">
+                <div id="addPerson_html" style="display: none">
+                    <h3>Add a person</h3>
+                    <p>Fill out the form to add a person</p>
+                    <div>
+                        <form>
+                            <div class="form-group row">
+                                <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="inputEmail" placeholder="Email" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputLastName" class="col-sm-2 col-form-label">Last Name</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputStreet" class="col-sm-2 col-form-label">Street</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="inputStreet" placeholder="Street" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputAdditionalInfo" class="col-sm-2 col-form-label">Additional Info</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="inputAdditionalInfo" placeholder="Additional Info" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputZipCode" class="col-sm-2 col-form-label">Zip Code</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="inputZipCode" placeholder="Zip Code" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputCity" class="col-sm-2 col-form-label">City</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="inputCity" placeholder="City" />
+                                </div>
+                            </div>
+                            <br />
+
+                            <h6>Phone Numbers</h6>
+                            <div class="form-group row">
+                                <label for="inputPhoneNumber1" class="col-sm-2 col-form-label">Phone Number 1</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="inputPhoneNumber1" placeholder="Phone Number" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPhoneDescription1" class="col-sm-2 col-form-label">Phone Description 1</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="inputPhoneDescription1" placeholder="Phone Description" />
+                                </div>
+                            </div>
+                            <div id="add-phone-div"></div>
+                            <button id="add-phone-button" class="btn btn-secondary mb-2 btn-sm">Add Another Number</button>
+                            <br />
+
+                            <h6>Hobbies</h6>
+                            <div id="add-hobby-div"></div>
+
+                            <br /><br />
+
+                            <button id="add-person-button" class="btn btn-primary mb-2">Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="personInfo_html" style="display: none">
+                    <h3>Person Information</h3>
+                    <p>Get information about a person</p>
+                    
+                    <div id="person-info-div">
+                        <form id="person-info-form">
+                            <div class="form-group row">
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="person-info-input" />
+                                </div>
+                            </div>
+                            <br />
+                            <button id="person-info-id-button" class="btn btn-secondary mb-2 btn-sm">Get person by ID</button>
+                            <button id="person-info-phone-button" class="btn btn-secondary mb-2 btn-sm">Get person by phone number</button>
+                        </form>
+                        <br /><br />
+                    </div>
+                </div>
+
+                <div id="personList_html" style="display: none">
+                    <h3>Person List</h3>
+                    <p>Get lists of persons</p>
+
+                    <div id="person-list-div">
+                      <form id="person-list-form">
+                        <div class="form-group row">
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="person-list-input" />
+                            </div>
+                        </div>
+                        <br />
+                        <button id="person-list-hobby-button" class="btn btn-secondary mb-2 btn-sm">Get persons with hobby</button>
+                        <button id="person-list-zipcode-button" class="btn btn-secondary mb-2 btn-sm">Get persons with zip code</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="about_html" style="display: none">
+                <h3>About</h3>
+                <p>Watch the small video given as intro to this code, BEFORE you start using it</p>
+            </div>
+            <!-- End of HTML for ABOUT Page -->
+
+            <!--End of all content -->
+        </div>
+
+        <!-- #################################################################-->
+        <!-- IMPORTANT  DO NOT IMPORT ANY JavaScript in this file by YOURSELF -->
+        <!-- #################################################################-->
+    </body>
+</html>
